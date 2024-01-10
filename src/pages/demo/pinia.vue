@@ -28,9 +28,4 @@ page {
   flex-direction: column;
   height: 100%;
 }
-
-.scroll-view {
-  flex: 1;
-  overflow: hidden;
-}
 </style>

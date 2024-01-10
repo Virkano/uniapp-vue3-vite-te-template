@@ -4,7 +4,7 @@
       "path": "pages/index/index",
       "type": "home",
       "style": {
-        "navigationBarTitleText": "首页"
+        "navigationStyle": "custom"
       },
       "name": "Home",
       "meta": {
@@ -169,7 +169,8 @@
   "easycom": {
     "autoscan": true,
     "custom": {
-      "fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue"
+      "fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue",
+      "fly-(.*)": "@/components/fly-$1/fly-$1.vue"
     }
   }
 }

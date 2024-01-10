@@ -6,8 +6,8 @@ export default defineUniPages({
       name: "Home",
       path: "pages/index/index",
       style: {
-        "navigationBarTitleText": "首页"
-        // "navigationStyle": "custom"
+        // "navigationBarTitleText": "首页"
+        "navigationStyle": "custom"
       },
       meta: {
         "tabBar": true
@@ -159,7 +159,8 @@ export default defineUniPages({
   easycom: {
     autoscan: true,
     custom: {
-      "fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue"
+      "fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue",
+      "fly-(.*)": "@/components/fly-$1/fly-$1.vue"
     }
   }
 }
