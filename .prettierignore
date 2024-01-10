@@ -4,6 +4,7 @@
 /public
 /node_modules
 /src/static
+/src/components/firstui
 
 # 忽略文件
 **/*-min.js

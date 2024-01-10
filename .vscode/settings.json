@@ -1,51 +1,68 @@
-////////////////////////////////////////////////////////////////////////////
-// vscode 编辑器和插件的配置 ////////////////////////////////////////////////
-// 参考：https://blog.csdn.net/weixin_46238462/article/details/125867532 //
-//////////////////////////////////////////////////////////////////////////
-
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.detectIndentation": false,
-    "editor.tabSize": 4,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit",
-        "source.fixAll.eslint": "explicit",
-        "source.fixAll.stylelint": "explicit"
-    },
-    "files.eol": "auto",
-    "eslint.enable": true,
-
-    //////////////////////////////////////////////////////////////////
-    // 官网参考：https://prettier.io/docs/en/options.html#tab-width //
-    ////////////////////////////////////////////////////////////////
-    "prettier.enable": true,
-    "prettier.semi": true,
-    "prettier.tabWidth": 4,
-    "prettier.printWidth": 160,
-    "prettier.endOfLine": "auto",
-    "prettier.singleQuote": true,
-    "prettier.ignorePath": ".prettierignore",
-    "prettier.requireConfig": true,
-    "cSpell.words": [
-        "alova",
-        "Attributify",
-        "camelcase",
-        "dcloudio",
-        "Iconify",
-        "Kuaishou",
-        "linebreak",
-        "Nvue",
-        "QUICKAPP",
-        "responsed",
-        "Toutiao",
-        "uniapi",
-        "uniapp",
-        "unocss",
-        "unref",
-        "VITE",
-        "Weapp",
-        "Weinxin",
-        "WEIXIN"
-    ]
+  // 默认格式化工具选择prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 保存的时候自动格式化
+  "editor.formatOnSave": true,
+  // 自动设定esslint工作区
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  //开启自动修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  // 配置stylelint检查的文件类型范围
+  "stylelint.validate": ["css", "scss", "vue", "html"], // 与package.json的scripts对应
+  "stylelint.enable": true,
+  "eslint.format.enable": true,
+  "eslint.run": "onSave",
+  "prettier.enable": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 配置语言的文件关联
+  "files.associations": {
+    "pages.json": "jsonc", // pages.json 可以写注释
+    "manifest.json": "jsonc" // manifest.json 可以写注释
+  },
+  "cSpell.words": [
+    "alova",
+    "Attributify",
+    "automator",
+    "autoscan",
+    "camelcase",
+    "commitlint",
+    "dcloudio",
+    "easycom",
+    "firstui",
+    "fontawesome",
+    "fortawesome",
+    "hussky",
+    "Iconify",
+    "Kuaishou",
+    "linebreak",
+    "lintstagedrc",
+    "loglevel",
+    "Nvue",
+    "QUICKAPP",
+    "refresherrefresh",
+    "responsed",
+    "scrolltolower",
+    "stacktracey",
+    "stylelint",
+    "tabbar",
+    "Toutiao",
+    "uniapi",
+    "uniapp",
+    "unocss",
+    "unref",
+    "VITE",
+    "Weapp",
+    "WechatMiniprogram",
+    "Weinxin",
+    "WEIXIN"
+  ]
 }

@@ -5,15 +5,15 @@ import { setupStore } from '@/state';
 import { setupRouter } from '@/router';
 
 export function createApp() {
-    const app = createSSRApp(App);
+  const app = createSSRApp(App);
 
-    // Configure router
-    setupRouter(app);
+  // Configure router
+  setupRouter(app);
 
-    // Configure store
-    setupStore(app);
+  // Configure store
+  setupStore(app);
 
-    return {
-        app,
-    };
+  return {
+    app,
+  };
 }

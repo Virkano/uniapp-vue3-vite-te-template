@@ -1,0 +1,17 @@
+# 忽略目录
+/dist
+/build
+/public
+/node_modules
+/src/static
+/src/components/firstui
+
+# 忽略文件
+**/*-min.js
+**/*.min.js
+**/*-min.css
+**/*.min.css
+**/*.tsbuildinfos
+/src/manifest.json
+.eslintcache
+pnpm-lock.yaml

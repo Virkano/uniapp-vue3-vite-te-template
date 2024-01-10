@@ -1,68 +1,49 @@
 <script setup lang="ts">
-import BasicButton from '@/components/BasicButton/index.vue';
-import AppProvider from '@/components/AppProvider/index.vue';
-import { CURRENT_PLATFORM, PLATFORMS } from '@/enums/platformEnum';
-import { judgePlatform } from '@/utils/platform';
-import Iconify from '@/components/Iconify/index.vue';
-import { getEnvValue } from '@/utils/env';
+// import { useRequest } from 'alova'
+// import { getHomeBannerAPI } from '@/services/api/home'
 
-const appTitle = getEnvValue<string>('VITE_APP_TITLE');
-
-const title = ref(appTitle);
-
-const platform = CURRENT_PLATFORM;
-
-const isVue3 = judgePlatform(PLATFORMS.VUE3);
-
-const router = useRouter();
-const handleGetStarted = () => {
-    router.pushTab({ path: '/pages/demo/index' });
-};
+// const { data: bannerList, send: getBanner } = useRequest(getHomeBannerAPI)
+// getBanner()
+const router = useRouter()
+function onTabClick(index: number) {
+  switch (index) {
+    case 1:
+      router.push({ path: '/pages/demo/pinia' })
+      break
+    case 2:
+      router.push({ path: '/pages/demo/mp-weixin-share' })
+      break
+  }
+}
 </script>
 <template>
-    <AppProvider>
-        <view class="content">
-            <view class="text-area">
-                <text class="">{{ title }}</text>
-            </view>
-            <view class="text-area">
-                <text class="">是否是Vue3: {{ isVue3 }}</text>
-            </view>
-            <view class="text-area">
-                <text class="text-red">当前平台: {{ platform }}</text>
-            </view>
-            <BasicButton @click="handleGetStarted">Get Started → </BasicButton>
-            <view class="text-red">uno css</view>
-            <Iconify icon="i-ph-anchor-simple-thin" size="65" />
-            <Iconify icon="i-system-uicons-book-text" />
-            <Iconify icon="i-system-uicons-battery-full" size="65" />
-            <Iconify icon="i-system-uicons-box-add" :size="65" />
-            <Iconify icon="i-system-uicons-bell-snooze" color="red" :size="65" />
-        </view>
-    </AppProvider>
+  <view class="viewport">
+    <fui-list bottomBorder title="Demo">
+      <fui-list-cell :bottomBorder="false" :highlight="false" arrow @click="onTabClick(1)">
+        pinia + 持久化
+      </fui-list-cell>
+      <fui-list-cell :bottomBorder="false" :highlight="false" arrow @click="onTabClick(2)">
+        微信分享
+      </fui-list-cell>
+    </fui-list>
+  </view>
 </template>
+
 <style lang="scss">
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+page {
+  height: 100%;
+  overflow: hidden;
+  background-color: #f7f7f7;
 }
 
-.logo {
-    height: 200rpx;
-    width: 200rpx;
-    margin: 280rpx auto 50rpx;
+.viewport {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.text-area {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60rpx;
-}
-
-.title {
-    font-size: 36rpx;
-    color: #8f8f94;
+.scroll-view {
+  flex: 1;
+  overflow: hidden;
 }
 </style>
