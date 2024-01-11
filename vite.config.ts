@@ -7,6 +7,7 @@ import TransformPages from 'uni-read-pages-vite'; // vite.config.ts
 import AutoImport from 'unplugin-auto-import/vite';
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
 import UniPlatform from '@uni-helper/vite-plugin-uni-platform'
+import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 
 export default ({ mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
@@ -63,6 +64,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     // 插件
     plugins: [
       UniPages({ exclude: ['**/components/**/**.*'] }),
+      UniLayouts(),
       UniPlatform(),
       uni(),
       Unocss(),

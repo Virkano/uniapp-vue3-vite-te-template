@@ -24,6 +24,18 @@
       }
     },
     {
+      "path": "pages/demo/default-page",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationBarTitleText": "默认页面layout"
+      },
+      "name": "默认页面layout",
+      "meta": {
+        "ignoreAuth": true
+      }
+    },
+    {
       "path": "pages/demo/index",
       "type": "page",
       "style": {
@@ -40,7 +52,7 @@
       "style": {
         "navigationBarTitleText": "微信分享"
       },
-      "name": "NotFound",
+      "name": "weixin-share",
       "meta": {
         "ignoreAuth": true
       }
@@ -51,7 +63,7 @@
       "style": {
         "navigationBarTitleText": "pinia + 持久化"
       },
-      "name": "NotFound",
+      "name": "pinia",
       "meta": {
         "ignoreAuth": true
       }

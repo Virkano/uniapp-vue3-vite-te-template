@@ -62,7 +62,7 @@ export default defineUniPages({
       }
     },
     {
-      name: "NotFound",
+      name: "pinia",
       path: "pages/demo/pinia",
       style: {
         "navigationBarTitleText": "pinia + 持久化"
@@ -72,10 +72,20 @@ export default defineUniPages({
       }
     },
     {
-      name: "NotFound",
+      name: "weixin-share",
       path: "pages/demo/mp-weixin-share",
       style: {
         "navigationBarTitleText": "微信分享"
+      },
+      meta: {
+        "ignoreAuth": true
+      }
+    },
+    {
+      name: "默认页面layout",
+      path: "pages/demo/default-page",
+      style: {
+        "navigationBarTitleText": "默认页面layout"
       },
       meta: {
         "ignoreAuth": true

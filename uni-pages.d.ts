@@ -6,6 +6,7 @@
 export interface NavigateToOptions {
   url: "/pages/index/index" |
        "/pages/about/index" |
+       "/pages/demo/default-page" |
        "/pages/demo/index" |
        "/pages/demo/mp-weixin-share" |
        "/pages/demo/pinia" |

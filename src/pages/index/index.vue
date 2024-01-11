@@ -39,6 +39,9 @@ function onTabClick(index: number) {
     case 2:
       router.push({ path: '/pages/demo/mp-weixin-share' })
       break
+    case 3:
+      router.push({ path: '/pages/demo/default-page' })
+      break
   }
 }
 </script>
@@ -60,7 +63,6 @@ function onTabClick(index: number) {
       <view class="i-carbon-home text-current"></view>
     </navigator>
     <!-- 3/3，如果当前页就是tabbar页，不用去首页，也就是什么图标都不需要 -->
-    <!-- 这边可以自定义header 一般是左边加个小logo 中间是标题 -->
     <view class="title">上海敬博</view>
   </view>
   <!-- #endif -->
@@ -92,27 +94,30 @@ function onTabClick(index: number) {
         <fui-list-cell :bottomBorder="false" :highlight="false" arrow @click="onTabClick(2)">
           微信分享
         </fui-list-cell>
+        <fui-list-cell :bottomBorder="false" :highlight="false" arrow @click="onTabClick(3)">
+          默认页面layout
+        </fui-list-cell>
       </fui-list>
-      <view class="h-800px"></view>
+      <view class="h-3000px"></view>
     </view>
   </scroll-view>
 </template>
 
-<style scoped lang="scss">
-page {
-  display: flex;
-  flex-direction: column;
+<style lang="scss">
+// page {
+//   display: flex;
+//   flex-direction: column;
 
-  // #ifdef MP-WEIXIN
-  height: 100%;
+//   // #ifdef MP-WEIXIN
+//   height: 100%;
 
-  // #endif
-  // #ifndef MP-WEIXIN
-  min-height: 100%;
+//   // #endif
+//   // #ifndef MP-WEIXIN
+//   min-height: 100%;
 
-  // #endif
-  overflow: hidden;
-}
+//   // #endif
+//   overflow: hidden;
+// }
 
 .scroll-view-bg {
   // 这个背景色要与.top-section的背景图差不多，这样下拉刷新看起来才比较协调
