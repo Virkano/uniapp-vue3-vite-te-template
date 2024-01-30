@@ -28,9 +28,9 @@ const submit = (e: any) => {
         const params = omit(unref(pageQuery), ['redirect', 'tabBar'])
         if (unref(pageQuery)?.tabBar) {
           // 这里replace方法无法跳转tabbar页面故改为replaceAll
-          router.replaceAll({ name: unref(pageQuery).redirect, params })
+          router.replaceAll({ name: unref(pageQuery)?.redirect, params })
         } else {
-          router.replace({ name: unref(pageQuery).redirect, params })
+          router.replace({ name: unref(pageQuery)?.redirect, params })
         }
       } else {
         // 不存在则返回上一页
@@ -52,9 +52,9 @@ const submit = (e: any) => {
         </label>
         <label class="form-item">
           <view class="form-label">密码:</view>
-          <view class="form-element"
-            ><input type="password" name="password" :value="form.password"
-          /></view>
+          <view class="form-element">
+            <input type="password" name="password" :value="form.password" />
+          </view>
         </label>
         <button form-type="submit" class="submit-btn" hover-class="none">登录</button>
       </form>
