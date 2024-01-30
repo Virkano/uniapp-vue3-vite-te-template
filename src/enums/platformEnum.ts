@@ -28,85 +28,85 @@ export enum PLATFORMS {
  * @constructor
  */
 function PLATFORM_ENV() {
-  let platform = PLATFORMS.DEFAULT;
+  let platform = PLATFORMS.DEFAULT
 
   /* #ifdef VUE3 */
-  platform = PLATFORMS.VUE3;
+  platform = PLATFORMS.VUE3
   /* #endif */
 
   /* #ifdef APP-PLUS */
-  platform = PLATFORMS.APP_PLUS;
+  platform = PLATFORMS.APP_PLUS
   /* #endif */
 
   /* #ifdef APP-PLUS-NVUE */
-  platform = PLATFORMS.APP_PLUS_NVUE;
+  platform = PLATFORMS.APP_PLUS_NVUE
   /* #endif */
 
   /* #ifdef APP-NVUE */
-  platform = PLATFORMS.APP_NVUE;
+  platform = PLATFORMS.APP_NVUE
   /* #endif */
 
   /* #ifdef H5 */
-  platform = PLATFORMS.H5;
+  platform = PLATFORMS.H5
   /* #endif */
 
   /* #ifdef MP */
-  platform = PLATFORMS.MP;
+  platform = PLATFORMS.MP
   /* #endif */
 
   /* #ifdef MP-WEIXIN */
-  platform = PLATFORMS.MP_WEIXIN;
+  platform = PLATFORMS.MP_WEIXIN
   /* #endif */
 
   /* #ifdef MP-ALIPAY */
-  platform = PLATFORMS.MP_ALIPAY;
+  platform = PLATFORMS.MP_ALIPAY
   /* #endif */
 
   /* #ifdef MP_BAIDU */
-  platform = PLATFORMS.MP_BAIDU;
+  platform = PLATFORMS.MP_BAIDU
   /* #endif */
 
   /* #ifdef MP-TOUTIAO */
-  platform = PLATFORMS.MP_TOUTIAO;
+  platform = PLATFORMS.MP_TOUTIAO
   /* #endif */
 
   /* #ifdef MP-LARK */
-  platform = PLATFORMS.MP_LARK;
+  platform = PLATFORMS.MP_LARK
   /* #endif */
 
   /* #ifdef MP-QQ */
-  platform = PLATFORMS.MP_QQ;
+  platform = PLATFORMS.MP_QQ
   /* #endif */
 
   /* #ifdef MP-KUAISHOU */
-  platform = PLATFORMS.MP_KUAISHOU;
+  platform = PLATFORMS.MP_KUAISHOU
   /* #endif */
 
   /* #ifdef MP-JD */
-  platform = PLATFORMS.MP_JD;
+  platform = PLATFORMS.MP_JD
   /* #endif */
 
   /* #ifdef MP-360 */
-  platform = PLATFORMS.MP_360;
+  platform = PLATFORMS.MP_360
   /* #endif */
 
   /* #ifdef QUICKAPP-WEBVIEW */
-  platform = PLATFORMS.QUICKAPP_WEBVIEW;
+  platform = PLATFORMS.QUICKAPP_WEBVIEW
   /* #endif */
 
   /* #ifdef QUICKAPP-WEBVIEW-UNION */
-  platform = PLATFORMS.QUICKAPP_WEBVIEW_UNION;
+  platform = PLATFORMS.QUICKAPP_WEBVIEW_UNION
   /* #endif */
 
   /* #ifdef QUICKAPP-WEBVIEW-HUAWEI */
-  platform = PLATFORMS.QUICKAPP_WEBVIEW_HUAWEI;
+  platform = PLATFORMS.QUICKAPP_WEBVIEW_HUAWEI
   /* #endif */
 
-  return platform;
+  return platform
 }
 
 /**
  * 当前平台
  * 在微信小程序中 "process.env['UNI_PLATFORM']" 无效
  */
-export const CURRENT_PLATFORM = PLATFORM_ENV();
+export const CURRENT_PLATFORM = PLATFORM_ENV()

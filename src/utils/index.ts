@@ -1,4 +1,4 @@
-import { isObject } from '@/utils/is';
+import { isObject } from '@/utils/is'
 import pagesJson from '@/pages.json'
 
 /**
@@ -7,13 +7,12 @@ import pagesJson from '@/pages.json'
  * @param target
  */
 export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
-  let key: string;
+  let key: string
   for (key in target) {
-    src[key] = isObject(src[key]) ? deepMerge(src[key], target[key]) : (src[key] = target[key]);
+    src[key] = isObject(src[key]) ? deepMerge(src[key], target[key]) : (src[key] = target[key])
   }
-  return src;
+  return src
 }
-
 
 /** 判断当前页面是否是tabbar页  */
 export const getIsTabbar = () => {

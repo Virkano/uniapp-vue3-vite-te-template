@@ -94,8 +94,8 @@
     "vueVersion" : "3",
     "h5" : {
         "router" : {
-            "mode" : "hash",
-            "base" : "./"
+            "mode" : "history",
+            "base" : "/"
         },
         "devServer" : {
             "https" : false

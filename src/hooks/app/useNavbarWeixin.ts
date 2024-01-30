@@ -7,7 +7,7 @@ export default () => {
   const isTabbar = getIsTabbar()
 
   // 页面滚动到底部时的操作，通常用于加载更多数据
-  const onScrollToLower = () => { }
+  const onScrollToLower = () => {}
   // 获取屏幕边界到安全区域距离
   const { safeAreaInsets } = uni.getSystemInfoSync()
 
@@ -29,7 +29,7 @@ export default () => {
         timeRange: 1000,
         startScrollOffset: 0,
         endScrollOffset: 50,
-      },
+      }
     )
     // 动画效果,导航栏标题
     pageInstance.animate(
@@ -41,7 +41,7 @@ export default () => {
         timeRange: 1000,
         startScrollOffset: 0,
         endScrollOffset: 50,
-      },
+      }
     )
     // 动画效果,导航栏返回按钮
     pageInstance.animate('.fly-navbar .left-icon', [{ color: '#fff' }, { color: '#000' }], 1000, {

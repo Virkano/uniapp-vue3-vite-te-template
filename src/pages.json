@@ -24,59 +24,6 @@
       }
     },
     {
-      "path": "pages/demo/default-page",
-      "type": "page",
-      "layout": "default",
-      "style": {
-        "navigationBarTitleText": "默认页面layout"
-      },
-      "name": "默认页面layout",
-      "meta": {
-        "ignoreAuth": true
-      }
-    },
-    {
-      "path": "pages/demo/index",
-      "type": "page",
-      "style": {
-        "navigationBarTitleText": "Demo"
-      },
-      "name": "Demo",
-      "meta": {
-        "tabBar": true
-      }
-    },
-    {
-      "path": "pages/demo/mp-weixin-share",
-      "type": "page",
-      "style": {
-        "navigationBarTitleText": "微信分享"
-      },
-      "name": "weixin-share",
-      "meta": {
-        "ignoreAuth": true
-      }
-    },
-    {
-      "path": "pages/demo/pinia",
-      "type": "page",
-      "style": {
-        "navigationBarTitleText": "pinia + 持久化"
-      },
-      "name": "pinia",
-      "meta": {
-        "ignoreAuth": true
-      }
-    },
-    {
-      "path": "pages/log/index",
-      "type": "page",
-      "style": {
-        "navigationBarTitleText": "日志"
-      },
-      "name": "Log"
-    },
-    {
       "path": "pages/login/index",
       "type": "page",
       "style": {
@@ -97,19 +44,14 @@
       "meta": {
         "ignoreAuth": true
       }
-    },
-    {
-      "path": "pages/template/index",
-      "type": "page",
-      "style": {}
     }
   ],
   "subPackages": [
     {
-      "root": "pagesA",
+      "root": "subModules1",
       "pages": [
         {
-          "path": "list/test1/index",
+          "path": "index",
           "style": {
             "navigationBarTitleText": "test1"
           },
@@ -118,24 +60,20 @@
           }
         },
         {
-          "path": "list/test2/index",
+          "name": "pinia",
+          "path": "demo/pinia",
           "style": {
-            "navigationBarTitleText": "test2",
-            "navigationStyle": "custom"
+            "navigationBarTitleText": "pinia + 持久化"
           },
           "meta": {
             "ignoreAuth": true
           }
-        }
-      ]
-    },
-    {
-      "root": "pagesB",
-      "pages": [
+        },
         {
-          "path": "detail/index",
+          "name": "weixin-share",
+          "path": "demo/mp-weixin-share",
           "style": {
-            "navigationBarTitleText": "Detail"
+            "navigationBarTitleText": "微信分享"
           },
           "meta": {
             "ignoreAuth": true
@@ -163,12 +101,6 @@
         "text": "首页",
         "iconPath": "static/images/tabBar/home.png",
         "selectedIconPath": "static/images/tabBar/selectedHome.png"
-      },
-      {
-        "pagePath": "pages/demo/index",
-        "text": "Demo",
-        "iconPath": "static/images/tabBar/demo.png",
-        "selectedIconPath": "static/images/tabBar/selectedDemo.png"
       },
       {
         "pagePath": "pages/about/index",

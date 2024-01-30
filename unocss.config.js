@@ -4,9 +4,9 @@
  * @link unocss-preset-weapp: https://github.com/MellowCo/unocss-preset-weapp
  * */
 
-import { defineConfig, presetIcons, presetAttributify, transformerVariantGroup } from 'unocss';
-import presetWeapp from 'unocss-preset-weapp';
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer';
+import { defineConfig, presetIcons, presetAttributify, transformerVariantGroup } from 'unocss'
+import presetWeapp from 'unocss-preset-weapp'
+import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
 const transformRules = {
   '.': '-d111-',
@@ -21,7 +21,7 @@ const transformRules = {
   ']': '-f111r-',
   $: '-r111-',
   ',': '-r222-',
-};
+}
 
 export default defineConfig({
   presets: [
@@ -65,4 +65,4 @@ export default defineConfig({
       transformRules,
     }),
   ],
-});
+})

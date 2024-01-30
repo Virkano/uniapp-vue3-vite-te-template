@@ -77,9 +77,21 @@ export const useSystem = () => {
     wifiEnabled,
     cacheLocation,
     storage,
-  } = uni.getSystemInfoSync();
-  const { top: safeAreaTop, bottom: safeAreaBottom, left: safeAreaLeft, right: safeAreaRight, height: safeAreaHeight, width: safeAreaWidth } = safeArea!;
-  const { top: safeAreaInsetsTop, bottom: safeAreaInsetsBottom, left: safeAreaInsetsLeft, right: safeAreaInsetsRight } = safeAreaInsets!;
+  } = uni.getSystemInfoSync()
+  const {
+    top: safeAreaTop,
+    bottom: safeAreaBottom,
+    left: safeAreaLeft,
+    right: safeAreaRight,
+    height: safeAreaHeight,
+    width: safeAreaWidth,
+  } = safeArea!
+  const {
+    top: safeAreaInsetsTop,
+    bottom: safeAreaInsetsBottom,
+    left: safeAreaInsetsLeft,
+    right: safeAreaInsetsRight,
+  } = safeAreaInsets!
   return {
     deviceId,
     deviceBrand,
@@ -148,5 +160,5 @@ export const useSystem = () => {
     wifiEnabled,
     cacheLocation,
     storage,
-  };
-};
+  }
+}

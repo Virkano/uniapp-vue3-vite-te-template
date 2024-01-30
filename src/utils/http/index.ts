@@ -31,7 +31,7 @@ const alovaInstance = createAlova({
   timeout: 5000,
   beforeRequest: (method) => {
     const authStore = useAuthStore()
-    method.config.headers = assign(method.config.headers, HEADER, authStore.getAuthorization)
+    method.config.headers = assign(method.config.headers, HEADER, authStore.getAuthorization())
   },
   responsed: {
     /**
@@ -46,7 +46,7 @@ const alovaInstance = createAlova({
       // @ts-ignore
       const { statusCode, data: rawData } = response
       // TODO 根据你的接口返回去修改 ↓
-      const { code, msg, result } = rawData as API
+      const { code, msg, data } = rawData as API
       if (statusCode === 200) {
         if (enableDownload) {
           // 下载处理
@@ -58,13 +58,13 @@ const alovaInstance = createAlova({
         }
         // TODO 根据你的接口返回去修改 ResultEnum
         if (code === ResultEnum.SUCCESS) {
-          return result as any
+          return data as any
         }
         msg && Toast(msg)
-        return Promise.reject(rawData.result)
+        return Promise.reject(rawData.data)
       }
       checkStatus(statusCode, msg || '')
-      return Promise.reject(rawData.result)
+      return Promise.reject(rawData.data)
     },
 
     /**

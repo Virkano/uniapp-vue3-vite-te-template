@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import BasicButton from '@/components/BasicButton/index.vue'
 import { useAuthStore } from '@/state/modules/auth'
 
 onLoad(() => {
@@ -9,7 +8,7 @@ const authStore = useAuthStore()
 const isLogin = ref(false)
 const router = useRouter()
 onShow(() => {
-  isLogin.value = authStore.isLogin
+  isLogin.value = authStore.isLogin()
 })
 const handleJump = (url: string) => {
   router.push(url)
@@ -19,6 +18,8 @@ const handleJump = (url: string) => {
 const handleLoginOut = () => {
   authStore.loginOut().then(() => {
     isLogin.value = false
+    console.log(isLogin.value)
+    console.log(authStore.token)
   })
 }
 </script>
@@ -31,14 +32,12 @@ const handleLoginOut = () => {
       </view>
       <view class="desc">{{ isLogin ? '测试' : '未登入' }}</view>
     </view>
-    <view class="cell"
-      ><BasicButton @click="handleJump('/pages/log/index?id=4345&title=log&word=关键词')"
-        >log</BasicButton
-      ></view
-    >
-    <view class="cell" v-if="isLogin"><BasicButton @click="handleLoginOut">登出</BasicButton></view>
+    <view class="cell"> </view>
+    <view class="cell" v-if="isLogin">
+      <button @click="handleLoginOut">登出</button>
+    </view>
     <view class="cell" v-else>
-      <BasicButton @click="handleJump('/pages/login/index')"> 登入 </BasicButton>
+      <button @click="handleJump('/pages/login/index')">登入</button>
     </view>
   </view>
 </template>

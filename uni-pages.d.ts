@@ -6,22 +6,16 @@
 export interface NavigateToOptions {
   url: "/pages/index/index" |
        "/pages/about/index" |
-       "/pages/demo/default-page" |
-       "/pages/demo/index" |
-       "/pages/demo/mp-weixin-share" |
-       "/pages/demo/pinia" |
-       "/pages/log/index" |
        "/pages/login/index" |
        "/pages/notFound/404" |
-       "/pages/template/index" |
-       "/pagesA/list/test1/index" |
-       "/pagesA/list/test2/index" |
-       "/pagesB/detail/index";
+       "/subModules1/index" |
+       "/subModules1/demo/pinia" |
+       "/subModules1/demo/mp-weixin-share";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 
 export interface SwitchTabOptions {
-  url: "/pages/index/index" | "/pages/demo/index" | "/pages/about/index"
+  url: "/pages/index/index" | "/pages/about/index"
 }
 
 type ReLaunchOptions = NavigateToOptions | SwitchTabOptions;

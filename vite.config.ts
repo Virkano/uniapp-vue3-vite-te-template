@@ -1,19 +1,19 @@
 // Vite中文网：https://vitejs.cn/config/
-import { ConfigEnv, loadEnv, UserConfig } from 'vite';
-import { resolve } from 'path';
-import uni from '@dcloudio/vite-plugin-uni';
-import Unocss from 'unocss/vite';
-import TransformPages from 'uni-read-pages-vite'; // vite.config.ts
-import AutoImport from 'unplugin-auto-import/vite';
+import { ConfigEnv, loadEnv, UserConfig } from 'vite'
+import { resolve } from 'path'
+import uni from '@dcloudio/vite-plugin-uni'
+import Unocss from 'unocss/vite'
+import TransformPages from 'uni-read-pages-vite' // vite.config.ts
+import AutoImport from 'unplugin-auto-import/vite'
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
 import UniPlatform from '@uni-helper/vite-plugin-uni-platform'
 import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 
 export default ({ mode }: ConfigEnv): UserConfig => {
-  const root = process.cwd();
-  const env = loadEnv(mode, root);
+  const root = process.cwd()
+  const env = loadEnv(mode, root)
   return {
-    base: '.',
+    base: './',
     // 设置路径别名
     resolve: {
       alias: {
@@ -54,10 +54,6 @@ export default ({ mode }: ConfigEnv): UserConfig => {
           chunkFileNames: `assets/[name].${new Date().getTime()}.js`,
           assetFileNames: `assets/[name].${new Date().getTime()}.[ext]`,
           compact: true,
-          // manualChunks: {
-          //     vue: ['vue', 'vue-router', 'vuex'],
-          //     echarts: ['echarts'],
-          // },
         },
       },
     },
@@ -89,5 +85,5 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         },
       }),
     ],
-  };
-};
+  }
+}

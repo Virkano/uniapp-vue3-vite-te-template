@@ -3,175 +3,118 @@ import { defineUniPages } from '@uni-helper/vite-plugin-uni-pages'
 export default defineUniPages({
   pages: [
     {
-      name: "Home",
-      path: "pages/index/index",
+      name: 'Home',
+      path: 'pages/index/index',
       style: {
         // "navigationBarTitleText": "首页"
-        "navigationStyle": "custom"
+        navigationStyle: 'custom',
+        // enablePullDownRefresh: true,
       },
       meta: {
-        "tabBar": true
-      }
+        tabBar: true,
+      },
     },
     {
-      name: "Demo",
-      path: "pages/demo/index",
+      name: 'About',
+      path: 'pages/about/index',
       style: {
-        "navigationBarTitleText": "Demo"
+        navigationBarTitleText: '关于',
       },
       meta: {
-        "tabBar": true
-      }
+        ignoreAuth: true,
+        tabBar: true,
+      },
     },
     {
-      name: "About",
-      path: "pages/about/index",
+      name: 'Login',
+      path: 'pages/login/index',
       style: {
-        "navigationBarTitleText": "关于"
+        navigationBarTitleText: '登录',
       },
       meta: {
-        "ignoreAuth": true,
-        "tabBar": true
-      }
+        ignoreAuth: true,
+      },
     },
     {
-      name: "Login",
-      path: "pages/login/index",
+      name: 'NotFound',
+      path: 'pages/notFound/404',
       style: {
-        "navigationBarTitleText": "登录"
+        navigationBarTitleText: 'Not Found',
       },
       meta: {
-        "ignoreAuth": true
-      }
-    },
-    {
-      name: "Log",
-      path: "pages/log/index",
-      style: {
-        "navigationBarTitleText": "日志"
-      }
-    },
-    {
-      name: "NotFound",
-      path: "pages/notFound/404",
-      style: {
-        "navigationBarTitleText": "Not Found"
+        ignoreAuth: true,
       },
-      meta: {
-        "ignoreAuth": true
-      }
     },
-    {
-      name: "pinia",
-      path: "pages/demo/pinia",
-      style: {
-        "navigationBarTitleText": "pinia + 持久化"
-      },
-      meta: {
-        "ignoreAuth": true
-      }
-    },
-    {
-      name: "weixin-share",
-      path: "pages/demo/mp-weixin-share",
-      style: {
-        "navigationBarTitleText": "微信分享"
-      },
-      meta: {
-        "ignoreAuth": true
-      }
-    },
-    {
-      name: "默认页面layout",
-      path: "pages/demo/default-page",
-      style: {
-        "navigationBarTitleText": "默认页面layout"
-      },
-      meta: {
-        "ignoreAuth": true
-      }
-    }
   ],
   subPackages: [
     {
-      root: "pagesA",
+      root: 'subModules1',
       pages: [
         {
-          path: "list/test1/index",
+          path: 'index',
           style: {
-            "navigationBarTitleText": "test1"
+            navigationBarTitleText: 'test1',
           },
           meta: {
-            "ignoreAuth": true
-          }
+            ignoreAuth: true,
+          },
         },
         {
-          path: "list/test2/index",
+          name: 'pinia',
+          path: 'demo/pinia',
           style: {
-            "navigationBarTitleText": "test2",
-            "navigationStyle": "custom"
+            navigationBarTitleText: 'pinia + 持久化',
           },
           meta: {
-            "ignoreAuth": true
-          }
-        }
-      ]
-    },
-    {
-      root: "pagesB",
-      pages: [
+            ignoreAuth: true,
+          },
+        },
         {
-          path: "detail/index",
+          name: 'weixin-share',
+          path: 'demo/mp-weixin-share',
           style: {
-            "navigationBarTitleText": "Detail"
+            navigationBarTitleText: '微信分享',
           },
           meta: {
-            "ignoreAuth": true
-          }
-        }
-      ]
-    }
+            ignoreAuth: true,
+          },
+        },
+      ],
+    },
   ],
   globalStyle: {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F2F2F2",
-    "backgroundColor": "#F2F2F2",
-    "navigationStyle": "default",
-    "renderingMode": "seperated",
-    "pageOrientation": "portrait"
+    navigationBarTextStyle: 'black',
+    navigationBarTitleText: 'uni-app',
+    navigationBarBackgroundColor: '#F2F2F2',
+    backgroundColor: '#F2F2F2',
+    navigationStyle: 'default',
+    renderingMode: 'seperated',
+    pageOrientation: 'portrait',
   },
   tabBar: {
-    color: "#474747",
-    selectedColor: "#9BC6FC",
-    backgroundColor: "#F2F2F2",
+    color: '#474747',
+    selectedColor: '#9BC6FC',
+    backgroundColor: '#F2F2F2',
     list: [
       {
-        pagePath: "pages/index/index",
-        text: "首页",
-        iconPath: "static/images/tabBar/home.png",
-        selectedIconPath: "static/images/tabBar/selectedHome.png"
+        pagePath: 'pages/index/index',
+        text: '首页',
+        iconPath: 'static/images/tabBar/home.png',
+        selectedIconPath: 'static/images/tabBar/selectedHome.png',
       },
       {
-        pagePath: "pages/demo/index",
-        text: "Demo",
-        iconPath: "static/images/tabBar/demo.png",
-        selectedIconPath: "static/images/tabBar/selectedDemo.png"
+        pagePath: 'pages/about/index',
+        text: '关于',
+        iconPath: 'static/images/tabBar/about.png',
+        selectedIconPath: 'static/images/tabBar/selectedAbout.png',
       },
-      {
-        pagePath: "pages/about/index",
-        text: "关于",
-        iconPath: "static/images/tabBar/about.png",
-        selectedIconPath: "static/images/tabBar/selectedAbout.png"
-      }
-    ]
+    ],
   },
   easycom: {
     autoscan: true,
     custom: {
-      "fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue",
-      "fly-(.*)": "@/components/fly-$1/fly-$1.vue"
-    }
-  }
-}
-)
+      'fui-(.*)': '@/components/firstui/fui-$1/fui-$1.vue',
+      'fly-(.*)': '@/components/fly-$1/fly-$1.vue',
+    },
+  },
+})
