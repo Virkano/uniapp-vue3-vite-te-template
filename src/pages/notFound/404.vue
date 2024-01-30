@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { onLoad } from '@dcloudio/uni-app'
-import BasicButton from '@/components/BasicButton/index.vue'
 
 const go = ref<string>('')
 const router = useRouter()
@@ -24,6 +23,6 @@ const backHome = () => {
     <view class="mb-40rpx">
       <text>{{ go }} 页面找不到了~</text>
     </view>
-    <BasicButton @click="backHome">返回首页</BasicButton>
+    <button @click="backHome">返回首页</button>
   </view>
 </template>
