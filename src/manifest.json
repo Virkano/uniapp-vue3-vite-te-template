@@ -95,7 +95,7 @@
     "h5" : {
         "router" : {
             "mode" : "history",
-            "base" : "/"
+            "base" : "./"
         },
         "devServer" : {
             "https" : false
