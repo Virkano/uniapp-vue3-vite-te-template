@@ -34,7 +34,7 @@ const handleLoginOut = () => {
     </view>
     <view class="cell"> </view>
     <view class="cell" v-if="isLogin">
-      <button @click="handleLoginOut">登出</button>
+      <button @click="handleLoginOut">注销</button>
     </view>
     <view class="cell" v-else>
       <button @click="handleJump('/pages/login/index')">登入</button>

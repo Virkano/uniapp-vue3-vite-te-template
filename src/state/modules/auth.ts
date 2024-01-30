@@ -1,6 +1,4 @@
 import { defineStore } from 'pinia'
-import { getCache, removeCache, setCache } from '@/utils/cache'
-import { TOKEN_KEY } from '@/enums/cacheEnum'
 import { logout } from '@/services/api/auth'
 
 export const useAuthStore = defineStore(
@@ -17,23 +15,23 @@ export const useAuthStore = defineStore(
     function getAuthorization() {
       return token.value ? { authorization: `Bearer ${token.value}` } : {}
     }
-    function initToken() {
-      token.value = getCache<string>(TOKEN_KEY) || undefined
-    }
     function setToken(state: string | undefined) {
       token.value = state
     }
     async function loginOut(): Promise<any> {
-      setToken(undefined)
-      const res = await logout()
-      return Promise.resolve(res)
+      try {
+        const res = await logout()
+        token.value = undefined
+        return Promise.resolve(res)
+      } catch (error) {
+        console.log(error)
+      }
     }
     return {
       token,
       getToken,
       isLogin,
       getAuthorization,
-      initToken,
       setToken,
       loginOut,
     }

@@ -94,7 +94,7 @@ export default defineUniPages({
   tabBar: {
     color: '#474747',
     selectedColor: '#9BC6FC',
-    backgroundColor: '#F2F2F2',
+    backgroundColor: '#fff',
     list: [
       {
         pagePath: 'pages/index/index',
