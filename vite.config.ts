@@ -79,7 +79,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
             'uni-mini-router': ['useRouter', 'useRoute'],
           },
         ],
-        dts: 'types/auto-imports.d.ts',
+        dts: 'src/types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,
         },

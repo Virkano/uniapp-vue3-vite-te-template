@@ -1,11 +1,16 @@
 // / <reference types="vite/client" />
 
+//type.d.ts
+declare const ROUTES: []
+
 declare module '*.vue' {
   import { DefineComponent } from 'vue'
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module 'uview-plus'
 
 interface ImportMetaEnv {
   readonly VITE_ENV: string

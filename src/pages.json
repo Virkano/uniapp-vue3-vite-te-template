@@ -113,6 +113,9 @@
   "easycom": {
     "autoscan": true,
     "custom": {
+      "^u-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+      "^up-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+      "^u-([^-].*)": "uview-plus/components/u-$1/u-$1.vue",
       "fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue",
       "fly-(.*)": "@/components/fly-$1/fly-$1.vue"
     }
