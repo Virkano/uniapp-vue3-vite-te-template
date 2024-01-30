@@ -4,18 +4,11 @@ import { logout } from '@/services/api/auth'
 export const useAuthStore = defineStore(
   'auth',
   () => {
-    const token = ref<string | undefined>(undefined)
-
-    const getToken = (token: string) => {
-      return token
-    }
-    function isLogin() {
-      return !!token.value
-    }
+    const token = ref()
     function getAuthorization() {
       return token.value ? { authorization: `Bearer ${token.value}` } : {}
     }
-    function setToken(state: string | undefined) {
+    function setToken(state: string) {
       token.value = state
     }
     async function loginOut(): Promise<any> {
@@ -29,8 +22,6 @@ export const useAuthStore = defineStore(
     }
     return {
       token,
-      getToken,
-      isLogin,
       getAuthorization,
       setToken,
       loginOut,

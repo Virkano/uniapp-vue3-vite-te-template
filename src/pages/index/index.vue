@@ -46,12 +46,18 @@ const onScroll = (event: any) => {
 const onScrollToLower = () => {
   console.log('----------触底了---------')
 }
+
+const swiperList = ref([
+  'https://p1.music.126.net/sMmV-xuS70iX6eeG4b1uZA==/109951169295491221.jpg',
+  'https://p1.music.126.net/zgY3onEEImnDbim0IGIw9A==/109951169295610508.jpg',
+  'https://p1.music.126.net/E-_qBdJofjX35M0hXr__VQ==/109951169295545573.jpg',
+])
 </script>
 <template>
   <view class="w-full h-auto">
     <view
       ref="navbar"
-      class="fixed top-0 left-0 z-2 w-full h-44px flex items-center justify-between bg-transparent"
+      class="fixed top-0 left-0 z-2 w-full flex items-center justify-between bg-transparent"
       :style="{
         paddingTop: safeAreaInsets?.top + 'px',
         background: `rgba(255, 255, 255, ${scrollTop})`,
@@ -59,7 +65,7 @@ const onScrollToLower = () => {
     >
       <image class="ml-12px w-36px h-36px" src="@/static/logo.png" />
       <view class="text-#333">首页</view>
-      <view class="mr-12px w-36px"></view>
+      <view class="mr-12px w-36px h-44px"></view>
     </view>
     <scroll-view
       class="bg-#F5F6FA"
@@ -73,7 +79,14 @@ const onScrollToLower = () => {
       style="height: 100vh"
     >
       <image class="relative top-0 left-0 w-full h-232px" src="@/static/images/home-bg.png" />
-      <view class="w-full h-1000px relative top-[-180px] left-0"> </view>
+      <view
+        class="w-full h-auto relative left-0"
+        :style="{ top: safeAreaInsets?.top - 180 + 'px' }"
+      >
+        <view class="w-full px-10px">
+          <u-swiper :list="swiperList" indicator indicatorMode="line" circular></u-swiper>
+        </view>
+      </view>
     </scroll-view>
   </view>
 </template>

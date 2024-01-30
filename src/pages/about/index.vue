@@ -8,7 +8,7 @@ const authStore = useAuthStore()
 const isLogin = ref(false)
 const router = useRouter()
 onShow(() => {
-  isLogin.value = authStore.isLogin()
+  isLogin.value = authStore.token
 })
 const handleJump = (url: string) => {
   router.push(url)
@@ -18,8 +18,6 @@ const handleJump = (url: string) => {
 const handleLoginOut = () => {
   authStore.loginOut().then(() => {
     isLogin.value = false
-    console.log(isLogin.value)
-    console.log(authStore.token)
   })
 }
 </script>

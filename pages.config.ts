@@ -11,6 +11,7 @@ export default defineUniPages({
         // enablePullDownRefresh: true,
       },
       meta: {
+        ignoreAuth: false,
         tabBar: true,
       },
     },
@@ -21,7 +22,7 @@ export default defineUniPages({
         navigationBarTitleText: '关于',
       },
       meta: {
-        ignoreAuth: true,
+        ignoreAuth: false,
         tabBar: true,
       },
     },
@@ -32,7 +33,7 @@ export default defineUniPages({
         navigationBarTitleText: '登录',
       },
       meta: {
-        ignoreAuth: true,
+        ignoreAuth: false,
       },
     },
     {
@@ -42,7 +43,7 @@ export default defineUniPages({
         navigationBarTitleText: 'Not Found',
       },
       meta: {
-        ignoreAuth: true,
+        ignoreAuth: false,
       },
     },
   ],
@@ -56,7 +57,7 @@ export default defineUniPages({
             navigationBarTitleText: 'test1',
           },
           meta: {
-            ignoreAuth: true,
+            ignoreAuth: false,
           },
         },
         {
@@ -66,7 +67,7 @@ export default defineUniPages({
             navigationBarTitleText: 'pinia + 持久化',
           },
           meta: {
-            ignoreAuth: true,
+            ignoreAuth: false,
           },
         },
         {
@@ -76,7 +77,7 @@ export default defineUniPages({
             navigationBarTitleText: '微信分享',
           },
           meta: {
-            ignoreAuth: true,
+            ignoreAuth: false,
           },
         },
       ],
