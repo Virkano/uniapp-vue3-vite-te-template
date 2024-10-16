@@ -10,7 +10,8 @@ interface NavigateToOptions {
        "/pages/notFound/404" |
        "/subModules1/index" |
        "/subModules1/demo/pinia" |
-       "/subModules1/demo/mp-weixin-share";
+       "/subModules1/demo/mp-weixin-share" |
+       "/subModules1/demo/main";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 

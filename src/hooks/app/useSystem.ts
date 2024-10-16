@@ -77,7 +77,7 @@ export const useSystem = () => {
     wifiEnabled,
     cacheLocation,
     storage,
-  } = uni.getSystemInfoSync()
+  } = uni.getSystemInfo()
   const {
     top: safeAreaTop,
     bottom: safeAreaBottom,

@@ -80,6 +80,17 @@ export default defineUniPages({
             ignoreAuth: false,
           },
         },
+        {
+          name: 'page-main',
+          path: 'demo/main',
+          style: {
+            navigationBarTitleText: '页面测试',
+            navigationStyle: 'custom',
+          },
+          meta: {
+            ignoreAuth: false,
+          },
+        },
       ],
     },
   ],
@@ -117,7 +128,6 @@ export default defineUniPages({
       '^u-(.*)': 'uview-plus/components/u-$1/u-$1.vue',
       '^up-(.*)': 'uview-plus/components/u-$1/u-$1.vue',
       '^u-([^-].*)': 'uview-plus/components/u-$1/u-$1.vue',
-      'fui-(.*)': '@/components/firstui/fui-$1/fui-$1.vue',
       'fly-(.*)': '@/components/fly-$1/fly-$1.vue',
     },
   },

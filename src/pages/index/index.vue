@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // import { onPullDownRefresh } from '@dcloudio/uni-app'
 // 获取屏幕边界到安全区域距离
-const { safeAreaInsets } = uni.getSystemInfoSync()
+const { safeAreaInsets } = uni.getWindowInfo()
 
 // 发现原生下拉刷新效果并不好，在微信里面只有顶部导航栏下拉才生效，页面区域下拉不生效，体验不好，结合自定义下拉刷新效果很好
 // 需在pages.json中结合enablePullDownRefresh: true, 使用
@@ -52,6 +52,12 @@ const swiperList = ref([
   'https://p1.music.126.net/zgY3onEEImnDbim0IGIw9A==/109951169295610508.jpg',
   'https://p1.music.126.net/E-_qBdJofjX35M0hXr__VQ==/109951169295545573.jpg',
 ])
+
+const router = useRouter()
+// 跳转到页面
+function goToPage(url: string) {
+  router.push(url)
+}
 </script>
 <template>
   <view class="w-full h-auto">
@@ -85,6 +91,10 @@ const swiperList = ref([
       >
         <view class="w-full px-10px">
           <u-swiper :list="swiperList" indicator indicatorMode="line" circular></u-swiper>
+
+          <view class="mt-10px">
+            <button type="primary" @click="goToPage('/subModules1/demo/main')">页面</button>
+          </view>
         </view>
       </view>
     </scroll-view>

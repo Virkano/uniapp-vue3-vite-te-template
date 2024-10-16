@@ -9,7 +9,7 @@ export default () => {
   // 页面滚动到底部时的操作，通常用于加载更多数据
   const onScrollToLower = () => {}
   // 获取屏幕边界到安全区域距离
-  const { safeAreaInsets } = uni.getSystemInfoSync()
+  const { safeAreaInsets } = uni.getWindowInfo()
 
   // #ifdef MP-WEIXIN
   // 基于小程序的 Page 类型扩展 uni-app 的 Page
